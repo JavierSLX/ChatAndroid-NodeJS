@@ -2,17 +2,13 @@ package com.morpheus.chatnodejs;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.morpheus.chatnodejs.Controller.ChatBoxAdapter;
+import com.morpheus.chatnodejs.Controller.ChatAdapter;
 import com.morpheus.chatnodejs.Model.Message;
 
 import org.json.JSONException;
@@ -48,7 +44,7 @@ public class ChatBoxActivity extends AppCompatActivity
 
         //RecyclerView
         messageList = new ArrayList<>();
-        final ArrayAdapter<Message> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, messageList);
+        final ChatAdapter adapter = new ChatAdapter(messageList);
         rcConversacion.setAdapter(adapter);
 
         //Obtiene el nickname del usuario
